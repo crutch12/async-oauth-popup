@@ -23,37 +23,37 @@ if (typeof Object.assign != 'function') {
   };
 }
 
-module.exports = function camelCase(name) {
+export function camelCase(name) {
   return name.replace(/([\:\-\_]+(.))/g, function (_, separator, letter, offset) {
     return offset ? letter.toUpperCase() : letter;
   });
 }
 
-module.exports = function isUndefined(value) {
+export function isUndefined(value) {
   return typeof value === 'undefined'
 }
 
-module.exports = function isDefined(value) {
+export function isDefined(value) {
   return typeof value !== 'undefined'
 }
 
-module.exports = function isObject(value) {
+export function isObject(value) {
   return value !== null && typeof value === 'object'
 }
 
-module.exports = function isString(value) {
+export function isString(value) {
   return typeof value === 'string'
 }
 
-module.exports = function isNumber(value) {
+export function isNumber(value) {
   return typeof value === 'number'
 }
 
-module.exports = function isFunction(value) {
+export function isFunction(value) {
   return typeof value === 'function'
 }
 
-module.exports = function objectExtend(a, b) {
+export function objectExtend(a, b) {
 
   // Don't touch 'null' or 'undefined' objects.
   if (a == null || b == null) {
@@ -85,7 +85,7 @@ module.exports = function objectExtend(a, b) {
  * @param  {String} url     URI
  * @return {String}
  */
-module.exports = function joinUrl(baseUrl, url) {
+export function joinUrl(baseUrl, url) {
   if (/^(?:[a-z]+:)?\/\//i.test(url)) {
     return url;
   }
@@ -109,7 +109,7 @@ module.exports = function joinUrl(baseUrl, url) {
  * @param  {Location} location
  * @return {String}
  */
-module.exports = function getFullUrlPath(location) {
+export function getFullUrlPath(location) {
   const isHttps = location.protocol === 'https:';
   return location.protocol + '//' + location.hostname +
     ':' + (location.port || (isHttps ? '443' : '80')) +
@@ -125,7 +125,7 @@ module.exports = function getFullUrlPath(location) {
  * @param  {String} Query string
  * @return {String}
  */
-module.exports = function parseQueryString(str) {
+export function parseQueryString(str) {
   let obj = {};
   let key;
   let value;
@@ -147,7 +147,7 @@ module.exports = function parseQueryString(str) {
  * @param  {String} str base64 encoded string
  * @return {Object}
  */
-module.exports = function decodeBase64(str) {
+export function decodeBase64(str) {
   let buffer;
   if (typeof module !== 'undefined' && module.exports) {
     try {
@@ -209,7 +209,7 @@ module.exports = function decodeBase64(str) {
   );
 }
 
-module.exports = function parseCookies(str = '') {
+export function parseCookies(str = '') {
   if (str.length === 0) return {};
   const parsed = {};
   const pattern = new RegExp('\\s*;\\s*');
@@ -222,7 +222,7 @@ module.exports = function parseCookies(str = '') {
   return parsed;
 };
 
-module.exports = function formatOptions(options) {
+export function formatOptions(options) {
   const { path, domain, expires, secure } = options;
   return [
     typeof path === 'undefined' || path === null
@@ -236,7 +236,7 @@ module.exports = function formatOptions(options) {
   ].join('');
 };
 
-module.exports = function formatCookie(key, value, options) {
+export function formatCookie(key, value, options) {
   return [
     encodeURIComponent(key),
     '=',
@@ -245,7 +245,7 @@ module.exports = function formatCookie(key, value, options) {
   ].join('');
 };
 
-module.exports = function getObjectProperty(objectRef, propertyName) {
+export function getObjectProperty(objectRef, propertyName) {
   let value = undefined;
   let valueRef = objectRef;
   const propNames = propertyName.split('.');

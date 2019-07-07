@@ -1,4 +1,4 @@
-const { objectExtend, parseQueryString, getFullUrlPath, isUndefined } = require('./utils.js');
+import { objectExtend, parseQueryString, getFullUrlPath, isUndefined } from './utils.js'
 
 /**
  * OAuth2 popup management class
@@ -7,7 +7,7 @@ const { objectExtend, parseQueryString, getFullUrlPath, isUndefined } = require(
  * @copyright Class mostly taken from https://github.com/sahat/satellizer 
  * and adjusted to fit vue-authenticate library
  */
-module.exports = class OAuthPopup {
+export default class OAuthPopup {
   constructor(url, name, popupOptions) {
     this.popup = null
     this.url = url
