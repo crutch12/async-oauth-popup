@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/crutch12/oauth-popup.git"
+    "url": "git+https://github.com/crutch12/async-oauth-popup.git"
   },
   "keywords": [
     "oauth",
@@ -18,7 +18,7 @@
   "author": "Kostya",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/crutch12/oauth-popup/issues"
+    "url": "https://github.com/crutch12/async-oauth-popup/issues"
   },
-  "homepage": "https://github.com/crutch12/oauth-popup#readme"
+  "homepage": "https://github.com/crutch12/async-oauth-popup#readme"
 }
